@@ -98,7 +98,7 @@ Unfortunately, scripts in package.json can't be commented inline because the JSO
 ├── tools                     # Node scripts that run build related tools
 │   └── analyzeBundle.js      # Analyzes the webpack bundle
 │   ├── assetsTransformer.js  # Fix for jest handling static assets like imported images
-│   ├── setup                 # Scripts for setting up a new project using React Slingshot
+│   ├── setup                 # Scripts for setting up a new project using React Seed
 │   │   ├── setup.js          # Configure project set up
 │   │   ├── setupMessage.js   # Display message when beginning set up
 │   │   └── setupPrompts.js   # Configure prompts for set up
@@ -231,9 +231,9 @@ Nope. Redux is useful for applications with more complex data flows. If your app
 
 `npm run build`. This will build the project for production. It does the following:
 
-* Minifies all JS
-* Sets NODE_ENV to prod so that React is built in production mode
-* Places the resulting built project files into /dist. (This is the folder you'll expose to the world).
+- Minifies all JS
+- Sets NODE_ENV to prod so that React is built in production mode
+- Places the resulting built project files into /dist. (This is the folder you'll expose to the world).
 
 If the app destination is different from the server root (`/`) you need to reconfigure `output.publicPath` in `webpack.config.prod.js` before building the app. See [webpack docs](https://webpack.js.org/configuration/output/#output-publicpath) for more information.
 
@@ -243,11 +243,11 @@ Check out this [blog post](http://www.latrovacommits.com/en/2017/12/14/how-publi
 
 Streamlined automated testing is a core feature of this starter kit. All tests are placed in files that end in .spec.js. Spec files are placed in the same directory as the file under test. Why?
 
-* The existence of tests is highly visible. If a corresponding .spec file hasn't been created, it's obvious.
-* Easy to open since they're in the same folder as the file being tested.
-* Easy to create new test files when creating new source files.
-* Short import paths are easy to type and less brittle.
-* As files are moved, it's easy to move tests alongside.
+- The existence of tests is highly visible. If a corresponding .spec file hasn't been created, it's obvious.
+- Easy to open since they're in the same folder as the file being tested.
+- Easy to create new test files when creating new source files.
+- Short import paths are easy to type and less brittle.
+- As files are moved, it's easy to move tests alongside.
 
 That said, you can of course place your tests under **test** instead. Then Jest will simply look in /test to find your spec files.
 
@@ -266,12 +266,13 @@ Also note that no actual physical files are written to the filesystem during the
 
 ## Debugging in Visual Studio Code:
 
-* Install the [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension.
-* Follow the instructions on how to [configure debugging in Visual Studio code](https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#using-the-debugger).
-* You can also add the following to `.vscode/launch.json` file to open the Chrome browser automatically and apply sourcemaps.
-* Start the application, then click the green play icon in Visual Studio Code to start debugging.
+- Install the [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension.
+- Follow the instructions on how to [configure debugging in Visual Studio code](https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#using-the-debugger).
+- You can also add the following to `.vscode/launch.json` file to open the Chrome browser automatically and apply sourcemaps.
+- Start the application, then click the green play icon in Visual Studio Code to start debugging.
 
 **example launch.json**
+
 ```json
 {
   "version": "0.2.0",
@@ -298,7 +299,7 @@ In short, Gulp is an unnecessary abstraction that creates more problems than it 
 
 ## Why does package.json reference the exact version?
 
-This assures that the build won't break when some new version is released. Unfortunately, many package authors don't properly honor [Semantic Versioning](http://semver.org), so instead, as new versions are released, we'll test them and then introduce them into React Slingshot. But yes, this means when you do `npm update` no new dependencies will be pulled down. You'll have to update package.json with the new version manually.
+This assures that the build won't break when some new version is released. Unfortunately, many package authors don't properly honor [Semantic Versioning](http://semver.org), so instead, as new versions are released, we'll test them and then introduce them into React Seed. But yes, this means when you do `npm update` no new dependencies will be pulled down. You'll have to update package.json with the new version manually.
 
 ## How do I handle images?
 
@@ -328,7 +329,7 @@ Hot reloading doesn't always play nicely with stateless functional components at
 
 ## How do I setup code coverage reporting?
 
-Use the `npm run test:cover` command to run the tests, building a code coverage report. The report is written to `/coverage/lcov-report/index.html`. Slingshot provides a script for this:
+Use the `npm run test:cover` command to run the tests, building a code coverage report. The report is written to `/coverage/lcov-report/index.html`. Seed provides a script for this:
 
 ```bash
 npm run open:cover
